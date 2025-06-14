@@ -1,0 +1,131 @@
+
+import type { Flight, Hotel } from './types';
+
+export const placeholderFlights: Flight[] = [
+  {
+    id: 'FL001',
+    airline: 'SkyHigh Airlines',
+    airlineLogoUrl: 'https://placehold.co/40x40.png',
+    flightNumber: 'SH203',
+    from: 'New York (JFK)',
+    to: 'London (LHR)',
+    departureTime: '2024-09-15T18:00:00Z',
+    arrivalTime: '2024-09-16T06:00:00Z',
+    duration: '7h 0m',
+    price: 550,
+    stops: 0,
+    departureAirport: 'John F. Kennedy International Airport',
+    arrivalAirport: 'London Heathrow Airport',
+    aircraftType: 'Boeing 777',
+    amenities: ['In-flight Wi-Fi', 'Meals included', 'Entertainment System'],
+  },
+  {
+    id: 'FL002',
+    airline: 'Horizon Wings',
+    airlineLogoUrl: 'https://placehold.co/40x40.png',
+    flightNumber: 'HW789',
+    from: 'Paris (CDG)',
+    to: 'Tokyo (NRT)',
+    departureTime: '2024-10-20T14:30:00Z',
+    arrivalTime: '2024-10-21T09:30:00Z',
+    duration: '12h 0m',
+    price: 820,
+    stops: 1,
+    departureAirport: 'Charles de Gaulle Airport',
+    arrivalAirport: 'Narita International Airport',
+    aircraftType: 'Airbus A350',
+    amenities: ['Extra Legroom Option', 'Meals included'],
+  },
+  {
+    id: 'FL003',
+    airline: 'Oceanic Air',
+    airlineLogoUrl: 'https://placehold.co/40x40.png',
+    flightNumber: 'OA415',
+    from: 'Los Angeles (LAX)',
+    to: 'Sydney (SYD)',
+    departureTime: '2024-11-05T22:00:00Z',
+    arrivalTime: '2024-11-07T06:00:00Z',
+    duration: '15h 0m',
+    price: 1200,
+    stops: 0,
+    departureAirport: 'Los Angeles International Airport',
+    arrivalAirport: 'Sydney Kingsford Smith Airport',
+    aircraftType: 'Boeing 787 Dreamliner',
+    amenities: ['Flat-bed seats (Business)', 'Premium Dining', 'In-flight Wi-Fi'],
+  },
+];
+
+export const placeholderHotels: Hotel[] = [
+  {
+    id: 'HT001',
+    name: 'The Grand Plaza',
+    location: 'London, UK',
+    rating: 5,
+    pricePerNight: 250,
+    thumbnailUrl: 'https://cdn.pixabay.com/photo/2017/08/02/10/09/london-2570498_1280.jpg',
+    thumbnailHint: 'london hotel exterior',
+    images: [
+        'https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060_1280.jpg',
+        'https://cdn.pixabay.com/photo/2016/12/04/19/20/london-1882046_1280.jpg'
+    ],
+    imageHints: ['luxury hotel suite', 'london city night'],
+    amenities: ['Free Wi-Fi', 'Swimming Pool', 'Gym', 'Restaurant', 'Spa'],
+    description: 'Experience luxury at The Grand Plaza, located in the heart of London. Enjoy world-class amenities and breathtaking city views.',
+    checkInTime: '15:00',
+    checkOutTime: '11:00',
+    roomTypes: [
+      { name: 'Standard Room', price: 250, features: ['Queen Bed', 'City View'] },
+      { name: 'Deluxe Suite', price: 400, features: ['King Bed', 'Balcony', 'Jacuzzi'] },
+    ],
+    ownerEmail: 'super.admin@example.com', // Or a generic super admin email
+    isApproved: true,
+  },
+  {
+    id: 'HT002',
+    name: 'Sakura Inn Tokyo',
+    location: 'Tokyo, Japan',
+    rating: 4,
+    pricePerNight: 180,
+    thumbnailUrl: 'https://cdn.pixabay.com/photo/2016/11/18/14/09/japanese-house-1834925_1280.jpg',
+    thumbnailHint: 'japanese inn garden',
+    images: [
+        'https://cdn.pixabay.com/photo/2016/03/05/18/54/japanese-house-1238002_1280.jpg',
+        'https://cdn.pixabay.com/photo/2016/10/18/10/58/japan-1749764_1280.jpg'
+    ],
+    imageHints: ['tatami room interior', 'kyoto temple autumn'],
+    amenities: ['Free Wi-Fi', 'Onsen (Hot Spring)', 'Traditional Breakfast', 'Garden'],
+    description: 'Immerse yourself in Japanese culture at Sakura Inn Tokyo. Featuring traditional tatami rooms and a serene onsen.',
+    checkInTime: '16:00',
+    checkOutTime: '10:00',
+     roomTypes: [
+      { name: 'Tatami Room', price: 180, features: ['Futon Beds', 'Garden View'] },
+      { name: 'Western Style Room', price: 220, features: ['Twin Beds', 'City View'] },
+    ],
+    ownerEmail: 'bob@example.com', // Assuming bob@example.com is a hotel owner
+    isApproved: true,
+  },
+  {
+    id: 'HT003',
+    name: 'Sunset Beach Resort',
+    location: 'Sydney, Australia',
+    rating: 4,
+    pricePerNight: 220,
+    thumbnailUrl: 'https://cdn.pixabay.com/photo/2015/03/09/18/34/beach-665971_1280.jpg',
+    thumbnailHint: 'tropical beach resort',
+    images: [
+        'https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_1280.jpg',
+        'https://cdn.pixabay.com/photo/2018/01/28/22/19/sunset-3114992_1280.jpg'
+    ],
+    imageHints: ['luxury villa ocean', 'beach sunset chairs'],
+    amenities: ['Beach Access', 'Outdoor Pool', 'Restaurant', 'Bar', 'Water Sports'],
+    description: 'Relax and unwind at Sunset Beach Resort, offering stunning ocean views and direct access to Sydney\'s famous beaches.',
+    checkInTime: '14:00',
+    checkOutTime: '12:00',
+    roomTypes: [
+      { name: 'Ocean View Room', price: 220, features: ['King Bed', 'Balcony'] },
+      { name: 'Family Bungalow', price: 350, features: ['2 Bedrooms', 'Kitchenette'] },
+    ],
+    ownerEmail: 'super.admin@example.com',
+    isApproved: true,
+  },
+];

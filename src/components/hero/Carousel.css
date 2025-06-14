@@ -1,0 +1,370 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Header section */
+
+
+
+/* carousel */
+
+.carousel{
+    margin-top: -160px ;
+    width: 100%;
+    height: 105vh;
+    /* background-color: white !important; */ /* Let HeroSection handle main background */
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+
+}
+
+.carousel .list .item{
+    
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 70%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+}
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .list .item:nth-child(3){
+    left: 67%;
+}
+
+.carousel .list .item:nth-child(4){
+    left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(5){
+    left: calc(67% + 400px);
+}
+
+.carousel .list .item:nth-child(6){
+    left: calc(67% + 600px);
+}
+
+.carousel .list .item:nth-child(n+7){
+    left: calc(67% + 800px);
+    opacity: 0;
+}
+
+
+
+
+
+.list .item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 500px;
+    text-align: left;
+    display: none;
+    z-index: 110; /* Ensure content is above items */
+}
+@media (max-width: 768px) {
+  .list .item .content {
+    left: 30px;     /* reduce left offset */
+    width: 80vw;
+  }
+}
+@media (max-width: 400px) {
+  .list .item .content {
+    margin-top: 70px;    /* reduce left offset */
+    width: 70vw;
+  }
+}
+.carousel .list .item:nth-child(2) .content{
+    display: block;
+}
+
+.content {
+  position: relative;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+.content .title {
+  font-size: 80px;
+  text-transform: uppercase;
+  color: #FFC1CC;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+}
+
+.content .name {
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFF8DC;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.85);
+  font-family: 'Orbitron', sans-serif; /* Ensure Orbitron is used if specified by design */
+}
+
+.content .des {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #FFF8DC;
+  line-height: 1.5;
+  max-width: 450px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.9s;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.content .btn {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.content .btn button {
+  padding: 14px 32px;
+  border: 2px solid #FFF8DC;
+  background-color: transparent;
+  color: #FFF8DC;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif; /* Ensure Orbitron is used */
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.content .btn button:hover {
+    background-color: #FFF8DC;
+    color: black;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .carouselContainer already handles background */
+/* .carousel .list .item:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #000 20%, transparent);
+} */
+
+@keyframes animate {
+    
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Carousel */
+
+.carousel.next .list .item:nth-child(1){
+    animation: itemHiddenNext 1s ease-in-out 1 forwards;
+}
+@keyframes itemHiddenNext {
+    from{
+        transform: translateX(0) translateY(0) rotate(0deg);
+        filter: blur(0);
+        opacity: 1;
+        z-index: 100!important;
+    }
+    to{
+        transform: translateX(-150%) translateY(-70%) rotate(-30deg);
+        filter: blur(20px);
+        opacity: 0;
+        z-index: 100!important;
+    }
+}
+.carousel.prev .list .item:nth-child(2){
+    animation: itemHiddenPrev 1s ease-in-out 1 forwards;
+}
+@keyframes itemHiddenPrev {
+    from{
+        transform: translate(0, 0);
+        filter: blur(0);
+        opacity: 1;
+    }
+    to{
+        transform: translate(200%, -50%) rotate(35deg);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+
+/* next prev arrows */
+.arrows {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  padding: 12px 20px;
+  border-radius: 24px;
+  animation: float 3s ease-in-out infinite; /* Apply float animation */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(-50%); } /* Adjust for translateX */
+    50% { transform: translateY(-10px) translateX(-50%); } /* Adjust for translateX */
+}
+
+
+/* buttons */
+.arrows button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: white;
+  background-color: transparent; /* Added background color to make sure it's not affecting by other styles */
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  outline: none;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  /* transform: perspective(600px) rotateX(0deg); */ /* Removed as it might conflict with float */
+}
+
+.arrows button:hover{
+    /* transform: perspective(600px) rotateX(20deg); */
+    background-color: rgba(255,255,255,0.1);
+}
+.arrows button:active{
+    /* transform: perspective(600px) rotateX(0deg); */
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+/* time running */
+.carousel .timeRunning{
+  /* display: none; Remove display none to show it */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px; /* Made it a bit thicker */
+  background-image: linear-gradient(to right, #21D4FD, #B721FF, #21D4FD); /* Example gradient */
+  z-index: 100;
+  width: 0%; /* Initial width for animation */
+}
+.carousel .timeRunning.animate{
+  animation: runningTime 5s linear forwards; /* Using user provided timeAutoNext (5s) */
+}
+
+
+@keyframes runningTime {
+    
+    from{width: 0%;}
+    to{width: 100%;}
+
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 999px){
+    
+    /* header{ */ /* This styling should be in a global CSS or header component's CSS */
+        /* padding-left: 50px; */
+    /* } */
+
+    .list .item .content{
+        left: 50px;
+    }
+
+    .content .title, .content .name{
+        font-size: 70px;
+    }
+
+    .content .des{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 690px){
+    /* header nav a{ */ /* Global or header specific */
+        /* font-size: 14px; */
+        /* margin-right: 0; */
+    /* } */
+
+    .list .item .content{
+        top: 40%;
+    }
+
+    .content .title, .content .name{
+        font-size: 45px;
+    }
+
+    .content .btn button{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Additional styling for the main container if needed, like the one for the hero section */
+.carouselContainer {
+    /* This is the div I added in JSX that wraps .carousel */
+    /* It should match the parent's background which is HeroSection */
+    /* The user's .carousel class already has margin-top: -160px, width 100%, height 105vh */
+    /* No specific styles needed here unless to override carousel's background */
+}
+
+    

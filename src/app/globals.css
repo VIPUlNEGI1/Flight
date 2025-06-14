@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 190 15% 10%; /* Very dark desaturated cyan/blue */
+    --foreground: 190 10% 90%; /* Light grayish cyan/blue */
+    --card: 190 15% 15%; /* Slightly lighter than background */
+    --card-foreground: 190 10% 90%;
+    --popover: 190 15% 18%; /* Similar to card, maybe a bit lighter for popovers */
+    --popover-foreground: 190 10% 90%;
+    
+    --primary: 180 70% 50%; /* Bright Teal/Cyan - For main interactive elements */
+    --primary-foreground: 190 15% 8%; /* Very dark text for on-primary elements (high contrast) */
+    
+    --secondary: 190 15% 25%; /* A step lighter for secondary elements or borders */
+    --secondary-foreground: 190 10% 85%; /* Text on secondary elements */
+    
+    --muted: 190 15% 30%; /* For less important elements, dividers */
+    --muted-foreground: 190 10% 65%; /* Text on muted elements, placeholder text */
+    
+    --accent: 180 65% 55%; /* Teal/Cyan - can be same as primary or slightly different shade */
+    --accent-foreground: 190 15% 8%; /* Dark text for on-accent elements */
+    
+    --destructive: 0 70% 55%; /* Standard red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    
+    --border: 190 15% 22%; /* Borders for cards, inputs */
+    --input: 190 15% 18%; /* Input field background */
+    --ring: 180 70% 55%; /* Focus ring color, often same as primary or accent */
+
+    --chart-1: 180 70% 60%;
+    --chart-2: 190 60% 55%;
+    --chart-3: 200 50% 50%;
+    --chart-4: 170 65% 50%;
+    --chart-5: 210 55% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
